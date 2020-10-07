@@ -14,7 +14,7 @@ app.get("/json", (req, res) => {
 });
 
 app.get("/text", (req, res) => {
-  let modulesString = dciModules.join();
+  let modulesString = dciModules.join(", ");
   res.json(modulesString);
   console.log(modulesString);
 });
