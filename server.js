@@ -14,3 +14,7 @@ app.get("/DCImodules", (req,res)=>{
     console.log("the whole array as JSON to the browser")
     res.json(DCImodules)
 })
+
+
+
+
