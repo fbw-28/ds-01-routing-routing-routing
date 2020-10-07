@@ -5,6 +5,7 @@ const server = require("./config/server");
 //dci courses
 const {courses} = require("./data");
 
+// ROUTES
 
 // GET -> @/json
 app.get("/json",(req,res)=>{
