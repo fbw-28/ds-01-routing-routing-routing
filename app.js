@@ -3,7 +3,7 @@ const app = express();
 const server = require("./config/server");
 
 //dci courses
-const {courses} = require("./data");
+const courses = require("./data");
 
 // ROUTES
 
@@ -19,8 +19,10 @@ app.get("/text",(req,res)=>{
 // GET -> @/html
 app.get("/html",(req,res)=>{
 
-    const createList= courses.map(course=>`<li>${course}</li>`)
-    console.log(createList)
+    const createList= courses.map(course=>{
+        return course === "Data Server"?`<li><b>${course}</b></li>`:`<li>${course}</li>`
+    }).join("")
+    
     res.send(`<ul>${createList}</ul>`);
 })
 

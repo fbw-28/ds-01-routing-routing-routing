@@ -1,4 +1,4 @@
-module.exports.courses = ['HTML/CSS',
+const courses = ['HTML/CSS',
     'JavaScript', 
     'DOM', 
     'NodeJS', 
@@ -6,3 +6,5 @@ module.exports.courses = ['HTML/CSS',
     'Data Server', 
     'Fullstack Server', 
     'Final Project']
+
+    module.exports = courses;
