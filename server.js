@@ -6,8 +6,7 @@ const port = 5000
 const text = courseModules.join(", ") 
 
 const list = courseModules.map(item =>
-        `<li>${item}</li>`
-).join("")
+    item === "Data Server" ? `<b><li>${item}</li></b>` : `<li>${item}</li>`).join("")
     
         
 //to start server
@@ -32,3 +31,5 @@ app.get('/html', (req, res) => {
     console.log("Route with html list")
     res.send(list)
 })
+
+
