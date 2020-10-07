@@ -9,5 +9,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdionis/ds-01-routing-routing-routing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rdionis/ds-01-routing-routing-routing/issues"
+  },
+  "homepage": "https://github.com/rdionis/ds-01-routing-routing-routing#readme"
 }
