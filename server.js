@@ -32,5 +32,14 @@ const modulesString = dciModules.join(", ");
 
 app.get("/string", (req, res) => {
   console.log("requested whole array as string");
-  res.send(modulesString);
+  res.send(`<button><a href="/">Home</a></button></br>${modulesString}`);
+});
+
+app.get("/list", (req, res) => {
+  let modulesHtml = dciModules.map((module) => {
+    return (
+      "<li>" + (module == "Data Server" ? `<b>${module}</b>` : module) + "</li>"
+    );
+  });
+  res.send(`<ul>${modulesHtml.join("")}</ul>`);
 });
