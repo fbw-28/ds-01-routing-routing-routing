@@ -11,6 +11,8 @@ app.get("/", (req, res) => {
       <p><a href="/html">HTML</a></p>
       <p><a href="/array">Array</a></p>
       <p><a href="/string">String</a></p>
+      <p><a href="/list">List</a></p>
+
   `);
 });
 
@@ -41,5 +43,7 @@ app.get("/list", (req, res) => {
       "<li>" + (module == "Data Server" ? `<b>${module}</b>` : module) + "</li>"
     );
   });
-  res.send(`<ul>${modulesHtml.join("")}</ul>`);
+  res.send(
+    `<button><a href="/">Home</a></button><br/><ul>${modulesHtml.join("")}</ul>`
+  );
 });
