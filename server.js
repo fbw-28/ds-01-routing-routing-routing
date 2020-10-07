@@ -21,8 +21,8 @@ app.listen(port, () => {
 });
 
 app.get("/html", (req, res) => {
-  res.send(`<h1>Welcome, I am HTML</h1>
-  <button><a href="/">Home</a></button>`);
+  res.send(`<h1 style="color:purple;">Welcome, I am HTML</h1>
+  <button><a href="/" style="text-decoration: none">Home</a></button>`);
 });
 
 app.get("/array", (req, res) => {
@@ -34,16 +34,29 @@ const modulesString = dciModules.join(", ");
 
 app.get("/string", (req, res) => {
   console.log("requested whole array as string");
-  res.send(`<button><a href="/">Home</a></button></br>${modulesString}`);
+  res.send(
+    `<p>${modulesString}</p>
+    <button><a href="/" style="text-decoration: none">Home</a></button><br/>`
+  );
 });
 
 app.get("/list", (req, res) => {
   let modulesHtml = dciModules.map((module) => {
     return (
-      "<li>" + (module == "Data Server" ? `<b>${module}</b>` : module) + "</li>"
+      "<li>" +
+      (module == "Data Server"
+        ? `<b>${module}</b>`
+        : module && module == "React"
+        ? `<em>${module}</em>`
+        : module && module == "Final Project"
+        ? `<b style = "color: red"<b/>${module.toUpperCase()}`
+        : module) +
+      "</li>"
     );
   });
   res.send(
-    `<button><a href="/">Home</a></button><br/><ul>${modulesHtml.join("")}</ul>`
+    `<ul>${modulesHtml.join(
+      ""
+    )}</ul><button><a href="/" style="text-decoration: none">Home</a></button>`
   );
 });
